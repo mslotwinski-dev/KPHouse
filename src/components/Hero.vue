@@ -58,9 +58,9 @@ export default defineComponent({})
     content: '';
     position: absolute;
     width: 100%;
-    height: 7px;
+    height: 6px;
     background: theme(b1);
-    bottom: -10px;
+    bottom: -7px;
     left: 0;
     border-radius: 10px;
   }
