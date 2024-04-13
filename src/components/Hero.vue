@@ -11,19 +11,39 @@
       </div>
       <div class="motto">Wspólnie znajdziemy Twój dom marzeń</div>
     </div>
+    <img src="@/assets/eg/aaa.png" alt="" class="easter" v-if="skalniak" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-export default defineComponent({})
+export default defineComponent({
+  data() {
+    return {
+      easteregg: 0,
+      skalniak: false,
+    }
+  },
+  methods: {
+    onPress(e: any) {
+      if (e.key == '2' && this.easteregg == 0) this.easteregg = 2
+      else if (e.key == '1' && this.easteregg == 2) this.easteregg = 3
+      else if (e.key == '3' && this.easteregg == 3) this.easteregg = 7
+      else if (e.key == '7' && this.easteregg == 7) this.skalniak = true
+      else this.easteregg = 0
+    },
+  },
+  mounted() {
+    document.addEventListener('keydown', this.onPress)
+  },
+})
 </script>
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
 .bar {
-  height: 40px;
+  height: 60px;
   background: theme(b1);
 }
 .container {
@@ -54,6 +74,10 @@ export default defineComponent({})
   text-transform: uppercase;
   margin-top: 15px;
   text-shadow: 0px 0px 10px theme(dark);
+  @media (max-width: 800px) {
+    font-size: 15px;
+    text-align: center;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -63,14 +87,28 @@ export default defineComponent({})
     bottom: -7px;
     left: 0;
     border-radius: 10px;
+    @media (max-width: 800px) {
+      height: 4px;
+    }
+  }
+}
+
+.name {
+  @media (max-width: 800px) {
+    text-align: center;
   }
 }
 
 .company {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   img {
     width: 450px;
+    @media (max-width: 800px) {
+      width: 250px;
+    }
   }
   span {
     // color: theme(main);
@@ -83,6 +121,11 @@ export default defineComponent({})
       font-weight: 700;
       text-shadow: 0px 0px 10px theme(dark);
       color: theme(light);
+
+      @media (max-width: 800px) {
+        font-size: 30px;
+        text-align: center;
+      }
     }
     .kp {
       display: inline-block;
@@ -94,7 +137,21 @@ export default defineComponent({})
       font-weight: 800;
       text-shadow: 0px 0px 10px theme(dark);
       color: theme(light);
+      text-align: center;
+
+      @media (max-width: 800px) {
+        font-size: 28px;
+        margin: auto;
+      }
     }
   }
+}
+
+.easter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  filter: opacity(0.5);
 }
 </style>
