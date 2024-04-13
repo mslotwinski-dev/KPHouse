@@ -14,7 +14,7 @@ export default defineComponent({})
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
 nav {
-  margin: 0 5vw;
+  padding: 0 5vw;
   height: 60px;
   background: theme(b1);
   position: fixed;
@@ -24,6 +24,7 @@ nav {
   width: 100vw;
   display: flex;
   align-items: center;
+  box-shadow: 0 0 10px theme(black);
 }
 
 img {

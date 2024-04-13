@@ -26,6 +26,7 @@ export default defineComponent({
     }
   },
   methods: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onPress(e: any) {
       if (e.key == '2' && this.easteregg == 0) this.easteregg = 2
       else if (e.key == '1' && this.easteregg == 2) this.easteregg = 3
@@ -54,6 +55,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 20px theme(b3);
 }
 
 .content {
