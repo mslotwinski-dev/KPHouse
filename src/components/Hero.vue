@@ -112,9 +112,6 @@ export default defineComponent({
       width: 250px;
     }
   }
-  span {
-    // color: theme(main);
-  }
   .name {
     .estate {
       margin-top: 12%;
