@@ -47,9 +47,11 @@ export default defineComponent({})
 @import '@/styles/index.scss';
 
 .container {
-  padding: 10px;
   max-width: 1250px;
   margin: auto;
+  @media (min-width: 1000px) {
+    padding: 10px;
+  }
 }
 
 b {
@@ -62,9 +64,19 @@ header {
   font-size: 25px;
   text-transform: uppercase;
   font-weight: 700;
+  margin: 10px;
+
+  @media (max-width: 1000px) {
+    font-size: 20px;
+    font-weight: 500;
+  }
 
   .big {
     font-size: 50px;
+    font-weight: 700;
+    @media (max-width: 1000px) {
+      font-size: 30px;
+    }
   }
 }
 
@@ -72,6 +84,10 @@ header {
   margin: 10px;
   font-size: 22px;
   margin-bottom: 20px;
+
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
 
   &.r {
     text-align: right;
@@ -87,6 +103,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 img {
@@ -94,6 +111,12 @@ img {
   border-radius: 10px;
   box-shadow: 5px 5px 10px theme(dark);
   margin: 10px;
+  @media (max-width: 1000px) {
+    width: 100vw;
+    margin: 10px 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 .text {

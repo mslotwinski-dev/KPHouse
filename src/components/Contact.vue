@@ -19,6 +19,12 @@ export default defineComponent({})
   max-width: 1200px;
   font-size: 25px;
   align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 1000px) {
+    font-size: 22px;
+    flex-direction: column;
+  }
 }
 
 .nr {
@@ -30,5 +36,11 @@ export default defineComponent({})
   color: theme(light);
   border-radius: 10px;
   box-shadow: 0 0 20px theme(main);
+
+  @media (max-width: 1000px) {
+    margin: 10px 0;
+    font-size: 22px;
+    margin-top: 10px;
+  }
 }
 </style>
