@@ -103,7 +103,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+  }
 }
 
 img {
